@@ -1,6 +1,9 @@
 # Raspberry Pi Zero Tweaker
 Raspberry Pi Zero Tweaker - CPU Info - Clock speed - Temperatures - Voltage - Overclocking - Change Governor &amp; more
 
+### How to use?
+```git clone https://github.com/cbusuioceanu/Raspberry-Pi-Zero-Tweaker.git && cd Raspberry-Pi-Zero-Tweaker && sudo bash rpizerotweak.sh```
+
 #### Raspberry Pi Zero Tweaker is a script written exclusively on a Raspberry Pi Zero device.
 
 #### In case of overclocking, we recommend using a Raspberry Pi cooling kit (heatsinks).
