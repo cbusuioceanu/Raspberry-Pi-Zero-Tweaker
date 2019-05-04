@@ -104,12 +104,6 @@ function pause(){
 
 ### Dependencies check
 function checkdependencies(){
-####################################################################################
-#                            Path to installations			           #
-####################################################################################
-find_xterm=$(which xterm)    # installation path to xterm (for resize cmd) 	   #
-find_vcgencmd=$(which vcgencmd) # installation path to xterm                  	   #
-####################################################################################
 
 	# -------------------------------------------
 	# Check for installed dependencies
@@ -121,7 +115,7 @@ find_vcgencmd=$(which vcgencmd) # installation path to xterm                  	 
 		echo "$show_execute Checking dependencies..."
 
 		#### check if xterm installation exists
-		if [ -n $find_xterm ]; then
+		if which xterm > /dev/null; then
 			echo "$show_ok[xterm]:$WHITE installation found..."
 		else
 			echo "$show_warning: This script requires xterm installed to work"
@@ -131,7 +125,7 @@ find_vcgencmd=$(which vcgencmd) # installation path to xterm                  	 
 		####
 
 		#### check if vcgencmd installation exists
-		if [ -e $find_vcgencmd ]; then
+		if which vcgencmd > /dev/null; then
 			echo "$show_ok[vcgencmd]:$WHITE installation found..."
 		else
 			echo "$show_warning: This script requires vcgencmd installed to work"
