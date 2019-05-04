@@ -102,7 +102,7 @@ function checkdependencies(){
 	# -------------------------------------------
 	# Check for installed dependencies
 	# -------------------------------------------
-	if [ -a /tmp/rpizerotweak ]; then
+	if [[ -a /tmp/rpizerotweak ]]; then
 		echo "$show_info Checking dependencies: $show_ok"
 	else
 		echo "$show_info Dependencies $show_ok" > /tmp/rpizerotweak
@@ -154,7 +154,7 @@ function freqtempvolt() {
 	volts=$(vcgencmd measure_volts)
 	volts=${volts:5:4}
 
-	if [ $volts != "1.20" ]; then
+	if [[ $volts != "1.20" ]]; then
 	    overvolts=$(overvoltdecimals $volts)
 	fi
 
@@ -169,7 +169,7 @@ function freqtempvolt() {
 	transitionlatency=$(cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_transition_latency)
 	###
 
-	if [ $governor == ondemand ]; then
+	if [[ $governor == ondemand ]]; then
 		### VARS
 		samplingrate=$(cat /sys/devices/system/cpu/cpufreq/ondemand/sampling_rate)
 		upthreshold=$(cat /sys/devices/system/cpu/cpufreq/ondemand/up_threshold)
@@ -179,7 +179,7 @@ function freqtempvolt() {
 		echo "+------------------------------+"
 		echo "Temperature:        $temp C"
 
-		if [ $volts == "1.20" ]; then
+		if [[ $volts == "1.20" ]]; then
 			echo "Voltage:            $volts V"
 		else
 			echo -n "Voltage:            $volts V"
@@ -200,7 +200,7 @@ function freqtempvolt() {
 		echo "+------------------------------+"
 		echo "Temperature:        $temp C"
 
-		if [ $volts == "1.20" ]; then
+		if [[ $volts == "1.20" ]]; then
 			echo "Voltage:            $volts V"
 		else
 			echo -n "Voltage:            $volts V"
