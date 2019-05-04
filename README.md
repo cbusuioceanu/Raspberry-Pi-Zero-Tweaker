@@ -18,4 +18,5 @@ Raspberry Pi Zero Tweaker - CPU Info - Clock speed - Temperatures - Voltage - Ov
 ##### -> Transition latency (CPU speed change is done in x nano seconds)
 ##### -> CPU governor change (governor: performance, powersave, userspace, ondemand, conservative)
 ##### -> Overclocking
+##### -> Change SWAP size
 ##### -> Check script updates from the main menu or update it from Git
