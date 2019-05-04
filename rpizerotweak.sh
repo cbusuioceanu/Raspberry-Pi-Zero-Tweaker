@@ -124,7 +124,7 @@ function checkdependencies(){
 		else
 			echo "$show_warning: This script requires vcgencmd installed to work"
 			echo "$show_execute Downloading from network..."
-			apt-get update && apt-get upgrade && apt-get dist-upgrade
+			apt-get update && apt-get upgrade && apt-get dist-upgrade && apt-get install -y libraspberrypi-bin
 		fi
 		sleep 1;
 		###
