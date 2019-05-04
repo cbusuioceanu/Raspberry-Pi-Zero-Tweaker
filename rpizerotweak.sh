@@ -65,15 +65,9 @@ export show_info
 export show_error
 export show_execute
 export show_ok
-export showgrnok
 export show_input
-export showexpired
 export show_warning
-export showremove
-export shownone
-export redhashtag
 ##
-
 
 version="05/03/2019"
 unixtime=$(date --date="$version" +"%s")
@@ -137,7 +131,7 @@ function checkdependencies(){
 			echo "$show_info All dependencies ok..."
 	fi
 }
-resizewindow && checkroot && checkdependencies
+checkdependencies && checkroot && resizewindow
 ###
 
 
@@ -201,7 +195,9 @@ function freqtempvolt() {
 		echo "Transition latency: $transitionlatency"
 		echo "+------------------------------+"
 	else
-		echo -e "\n+------------------------------------+"
+		echo "+------------------------------+"
+		echo "|          CPU Details         |"
+		echo "+------------------------------+"
 		echo "Temperature:        $temp C"
 
 		if [ $volts == "1.20" ]; then
@@ -216,7 +212,7 @@ function freqtempvolt() {
 		echo "Current speed:      $freq MHz"
 		echo "Governor:           $governor"
 		echo "Transition latency: $transitionlatency"
-		echo "+------------------------------------+"
+		echo "+------------------------------+"
 	fi
 		pause
 }
@@ -282,11 +278,11 @@ arm_freq_min=700
 core_freq=500
 sdram_freq=500
 over_voltage=6
-boot_delay=1" > /boot/config.txt
+boot_delay=1" >> /boot/config.txt
 
-	echo "$show_execute Mods written."
+	echo "$show_ok Mods written."
 	echo "$show_info Please review mods..." && sleep 1
-	sudo nano /boot/config.txt
+	nano /boot/config.txt
 	echo -e "\nAll ok."
 	pause
 else
